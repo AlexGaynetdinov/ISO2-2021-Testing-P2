@@ -18,7 +18,7 @@ public class TransportPlan {
 		return Ill_Suspected;
 	}
 
-	public boolean Essential() {
+	public boolean getEssential() {
 		return Essential;
 	}
 
@@ -28,11 +28,11 @@ public class TransportPlan {
 		this.Age = Age;
 	}
 
-	public void SetIll_Suspected(boolean Ill_Suspected) {
+	public void setIll_Suspected(boolean Ill_Suspected) {
 		this.Ill_Suspected = Ill_Suspected;
 	}
 
-	public void Essential(boolean Essential) {
+	public void setEssential(boolean Essential) {
 		this.Essential = Essential;
 	}
 
