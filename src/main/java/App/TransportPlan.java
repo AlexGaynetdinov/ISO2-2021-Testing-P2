@@ -53,6 +53,8 @@ public class TransportPlan {
 					Price = Price - (Price * 0.6);
 				} else if (Age > 65 && Seats > OcupiedSeats) {
 					Price = Price - (Price * 0.8);
+				} else if (23 < Age && Age < 65 && Seats > OcupiedSeats) {
+					Price = 8;
 				} else {
 					throw new InvalidPassenger("You can't travel.");
 				}
@@ -65,6 +67,8 @@ public class TransportPlan {
 					Price = Price - (Price * 0.3);
 				} else if (Age > 65 && Seats > OcupiedSeats) {
 					Price = Price - (Price * 0.5);
+				} else if (23 < Age && Age < 65 && Seats > OcupiedSeats) {
+					Price = 8;
 				} else {
 					throw new InvalidPassenger("You can't travel.");
 				}
@@ -81,6 +85,8 @@ public class TransportPlan {
 						Price = Price * 1;
 					} else if (Age > 65 && Seats > OcupiedSeats) {
 						Price = Price + (Price * 0.2);
+					} else if (23 < Age && Age < 65 && Seats > OcupiedSeats) {
+						Price = 8;
 					} else {
 						throw new InvalidPassenger("You can't travel.");
 					}
@@ -91,6 +97,8 @@ public class TransportPlan {
 						Price = Price * 1;
 					} else if (Age > 65 && Seats > OcupiedSeats) {
 						Price = Price + (Price * 0.2);
+					} else if (23 < Age && Age < 65 && Seats > OcupiedSeats) {
+						Price = 8;
 					} else {
 						throw new InvalidPassenger("You can't travel.");
 					}
@@ -108,6 +116,8 @@ public class TransportPlan {
 						Price = Price + (Price * 0.2);
 					} else if (Age > 65 && Seats > OcupiedSeats) {
 						Price = Price + (Price * 0.5);
+					} else if (23 < Age && Age < 65 && Seats > OcupiedSeats) {
+						Price = 8;
 					} else {
 						throw new InvalidPassenger("You can't travel.");
 					}
@@ -118,6 +128,8 @@ public class TransportPlan {
 						Price = Price + (Price * 0.2);
 					} else if (Age > 65 && Seats > OcupiedSeats) {
 						Price = Price + (Price * 0.5);
+					} else if (23 < Age && Age < 65 && Seats > OcupiedSeats) {
+						Price = 8;
 					} else {
 						throw new InvalidPassenger("You can't travel.");
 					}
@@ -135,6 +147,8 @@ public class TransportPlan {
 						Price = Price + (Price * 0.5);
 					} else if (Age > 65 && Seats > OcupiedSeats) {
 						throw new InvalidPassenger("You can't travel.");
+					} else if (23 < Age && Age < 65 && Seats > OcupiedSeats) {
+						Price = 8;
 					} else {
 						throw new InvalidPassenger("You can't travel.");
 					}
@@ -145,6 +159,8 @@ public class TransportPlan {
 						Price = Price + (Price * 0.5);
 					} else if (Age > 65 && Seats > OcupiedSeats) {
 						throw new InvalidPassenger("You can't travel.");
+					} else if (23 < Age && Age < 65 && Seats > OcupiedSeats) {
+						Price = 8;
 					} else {
 						throw new InvalidPassenger("You can't travel.");
 					}
