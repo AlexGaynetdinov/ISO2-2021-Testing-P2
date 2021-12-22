@@ -1,5 +1,7 @@
 package App;
 
+import Exceptions.InvalidPassenger;
+
 public class TransportPlan {
 
 	private int Age = 0;
@@ -36,7 +38,7 @@ public class TransportPlan {
 
 	// Methods
 
-	public double GetPrice() {
+	public double GetPrice() throws InvalidPassenger {
 
 		int IA = 340;
 		double Price = 8;
@@ -52,7 +54,7 @@ public class TransportPlan {
 				} else if (Age > 65 && Seats > OcupiedSeats) {
 					Price = Price - (Price * 0.8);
 				} else {
-					// Exception
+					throw new InvalidPassenger("You can't travel.");
 				}
 
 			} else if (100 < IA && IA < 200) { // level 1
@@ -64,7 +66,7 @@ public class TransportPlan {
 				} else if (Age > 65 && Seats > OcupiedSeats) {
 					Price = Price - (Price * 0.5);
 				} else {
-					// Exception
+					throw new InvalidPassenger("You can't travel.");
 				}
 
 			} else if (201 < IA && IA < 300) { // level 2
@@ -80,7 +82,7 @@ public class TransportPlan {
 					} else if (Age > 65 && Seats > OcupiedSeats) {
 						Price = Price + (Price * 0.2);
 					} else {
-						// Exception
+						throw new InvalidPassenger("You can't travel.");
 					}
 
 				} else {
@@ -90,7 +92,7 @@ public class TransportPlan {
 					} else if (Age > 65 && Seats > OcupiedSeats) {
 						Price = Price + (Price * 0.2);
 					} else {
-						// Exception
+						throw new InvalidPassenger("You can't travel.");
 					}
 				}
 
@@ -107,7 +109,7 @@ public class TransportPlan {
 					} else if (Age > 65 && Seats > OcupiedSeats) {
 						Price = Price + (Price * 0.5);
 					} else {
-						// Exception
+						throw new InvalidPassenger("You can't travel.");
 					}
 
 				} else {
@@ -117,9 +119,8 @@ public class TransportPlan {
 					} else if (Age > 65 && Seats > OcupiedSeats) {
 						Price = Price + (Price * 0.5);
 					} else {
-						// Exception
+						throw new InvalidPassenger("You can't travel.");
 					}
-
 				}
 
 			} else if (IA > 501) { // level 4
@@ -133,9 +134,9 @@ public class TransportPlan {
 					if (Age < 23 && Seats > OcupiedSeats) {
 						Price = Price + (Price * 0.5);
 					} else if (Age > 65 && Seats > OcupiedSeats) {
-						// Exception
+						throw new InvalidPassenger("You can't travel.");
 					} else {
-						// Exception
+						throw new InvalidPassenger("You can't travel.");
 					}
 
 				} else {
@@ -143,9 +144,9 @@ public class TransportPlan {
 					if (Age < 23 && Seats > OcupiedSeats) {
 						Price = Price + (Price * 0.5);
 					} else if (Age > 65 && Seats > OcupiedSeats) {
-						// Exception
+						throw new InvalidPassenger("You can't travel.");
 					} else {
-						// Exception
+						throw new InvalidPassenger("You can't travel.");
 					}
 				}
 			}
@@ -154,9 +155,8 @@ public class TransportPlan {
 
 		} else {
 
-			// Exception
+			throw new InvalidPassenger("You can't travel.");
 
-			return 0.0;
 		}
 	}
 
