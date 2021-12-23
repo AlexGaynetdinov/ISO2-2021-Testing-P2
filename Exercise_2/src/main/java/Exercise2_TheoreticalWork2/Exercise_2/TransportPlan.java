@@ -76,7 +76,7 @@ public class TransportPlan {
 
 				seats = (int) (seats * 0.6);
 
-				if (essential = false) {
+				if (essential == false) {
 
 					seats = (int) (seats - (seats * 0.6));
 
@@ -107,7 +107,7 @@ public class TransportPlan {
 
 				seats = (int) (seats * 0.4);
 
-				if (essential = false) {
+				if (essential == false) {
 
 					seats = (int) (seats - (seats * 0.8));
 
@@ -138,7 +138,7 @@ public class TransportPlan {
 
 				seats = (int) (seats * 0.3);
 
-				if (essential = false) {
+				if (essential == false) {
 
 					seats = (int) (seats - (seats * 0.9));
 

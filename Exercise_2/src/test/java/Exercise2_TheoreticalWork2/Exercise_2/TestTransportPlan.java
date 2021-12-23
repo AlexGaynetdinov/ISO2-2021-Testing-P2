@@ -1,11 +1,11 @@
 package Exercise2_TheoreticalWork2.Exercise_2;
 
 import static org.junit.Assert.assertEquals;
-import org.junit.rules.ExpectedException;
+import org.junit.Assert;
 
-import org.junit.Rule;
 import org.junit.Before;
 import org.junit.Test;
+
 
 public class TestTransportPlan {
 
@@ -44,19 +44,20 @@ public class TestTransportPlan {
 	}
 
     //Exception testing
-
-    @Rule
-    public ExpectedException exception = ExpectedException.none();
-     
+  
     @Test
     public void testUsernameTooShort() throws InvalidPassenger {
-        exception.expect(InvalidPassenger.class);
-        exception.expectMessage("You can't travel.");
-         
-        t.calculatePrice(24, true, false);
+    	try {
+    	    assertEquals("You can't travel.", t.calculatePrice(24, true, false));
+    	    Assert.fail( "Should have thrown an exception" );
+    	} 
+    	catch (Exception e) {
+    	    String expectedMessage = "You can't travel.";
+    	    Assert.assertEquals( "Exception message must be correct", expectedMessage, e.getMessage() );
+    	}
     }
 
-    
+    @Test
 	public void testCalculatePrice() throws InvalidPassenger{
 		t.calculatePrice(-80000, false, false);
 		t.calculatePrice(-65535, false, false);
@@ -81,16 +82,186 @@ public class TestTransportPlan {
 	
 	@Test
 	public void test1() throws InvalidPassenger {
-		//toda una ejecucion del programa
+
 		int age = 0;
 		boolean ill_Suspected = false;
 		boolean essential = false;
-		int IA = 340;
+		int IA = 35;
 		double default_price = 7.50;
 		int seats = 50;
 		
 		TransportPlan plan = new TransportPlan(IA, default_price, seats);
-		assertEquals(24.8, plan.calculatePrice(age, ill_Suspected, essential),0);
+		assertEquals(3, plan.calculatePrice(age, ill_Suspected, essential),0);
 	}
+	
+	@Test
+	public void test2() throws InvalidPassenger {
+
+		int age = 26;
+		boolean ill_Suspected = false;
+		boolean essential = false;
+		int IA = 30;
+		double default_price = 7.50;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(7.5, plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test3() throws InvalidPassenger {
+
+		int age = 78;
+		boolean ill_Suspected = false;
+		boolean essential = false;
+		int IA = 45;
+		double default_price = 7.50;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(1.5, plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test4() throws InvalidPassenger {
+
+		int age = 7;
+		boolean ill_Suspected = false;
+		boolean essential = false;
+		int IA = 156;
+		double default_price = 7.50;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(5.25, plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test5() throws InvalidPassenger {
+
+		int age = 27;
+		boolean ill_Suspected = false;
+		boolean essential = false;
+		int IA = 156;
+		double default_price = 8;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(8, plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test6() throws InvalidPassenger {
+
+		int age = 27;
+		boolean ill_Suspected = false;
+		boolean essential = false;
+		int IA = 256;
+		double default_price = 8;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(8, plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test7() throws InvalidPassenger {
+
+		int age = 27;
+		boolean ill_Suspected = false;
+		boolean essential = false;
+		int IA = 456;
+		double default_price = 8;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(8, plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test8() throws InvalidPassenger {
+
+		int age = 27;
+		boolean ill_Suspected = false;
+		boolean essential = false;
+		int IA = 456;
+		double default_price = 8;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(8, plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test9() throws InvalidPassenger {
+
+		int age = 27;
+		boolean ill_Suspected = false;
+		boolean essential = true;
+		int IA = 456;
+		double default_price = 8;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(8,plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test10() throws InvalidPassenger {
+
+		int age = 27;
+		boolean ill_Suspected = false;
+		boolean essential = true;
+		int IA = 556;
+		double default_price = 8;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(8,plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test11() throws InvalidPassenger {
+
+		int age = 28;
+		boolean ill_Suspected = false;
+		boolean essential = false;
+		int IA = 556;
+		double default_price = 8;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(8,plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test12() throws InvalidPassenger {
+
+		int age = 28;
+		boolean ill_Suspected = false;
+		boolean essential = true;
+		int IA = 220;
+		double default_price = 8;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(8,plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+	
+	@Test
+	public void test13() throws InvalidPassenger {
+
+		int age = 12;
+		boolean ill_Suspected = false;
+		boolean essential = true;
+		int IA = 520;
+		double default_price = 8;
+		int seats = 50;
+		
+		TransportPlan plan = new TransportPlan(IA, default_price, seats);
+		assertEquals(12,plan.calculatePrice(age, ill_Suspected, essential),0);
+	}
+
+
 
 }
