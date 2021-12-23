@@ -13,37 +13,34 @@ public class TestTransportPlan {
 
 	@Before
 	public void setUp() throws Exception {
-		t = new TransportPlan();
+		t = new TransportPlan(0, 7, 40);
 	}
 
 	@Test
-	public void testAge() {
-		assertEquals(t.getAge(), 0);
-		t.setAge(24);
-		assertEquals(t.getAge(), 24);
+	public void testIA() {
+		assertEquals(t.getIA(), 0);
+		t.setIA(200);
+		assertEquals(t.getIA(), 200);
 	}
 
 	@Test
-	public void testIll_Suspected() {
-		assertEquals(t.getIll_Suspected(), false);
-		t.setIll_Suspected(true);
-		assertEquals(t.getIll_Suspected(), true);
+	public void testSt_price() {
+		assertEquals(t.getSt_price(), 7, 0);
+		t.setSt_price(8);
+		assertEquals(t.getSt_price(), 8, 0);
 	}
 
 	@Test
-	public void testEssential() {
-		assertEquals(t.getEssential(), false);
-		t.setEssential(true);
-		assertEquals(t.getEssential(), true);
+	public void testSeats() {
+		assertEquals(t.getSeats(), 40);
+		t.setSeats(50);
+		assertEquals(t.getSeats(), 50);
 	}
 
 	@Test
 	public void testGetPrice() throws InvalidPassenger {
-		t.setAge(25);
-		t.setEssential(false);
-		t.setIll_Suspected(false);
 
-		assertEquals(t.GetPrice(), 8.0, 0);
+		assertEquals(t.calculatePrice(24, false, false), 8.0, 0);
 	}
 
 }

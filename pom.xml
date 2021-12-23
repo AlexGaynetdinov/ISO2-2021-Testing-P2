@@ -7,7 +7,7 @@
 	<groupId>ISO2T</groupId>
 	<artifactId>TestingP2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>TestingP2</name>
 	<url>http://maven.apache.org</url>
