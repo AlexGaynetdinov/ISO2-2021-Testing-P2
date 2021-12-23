@@ -44,29 +44,6 @@ public class TestTransportPlan {
 
 		assertEquals(t.calculatePrice(24, false, false), 7.5, 0);
 	}
-	
-	@Test
-	public void testCalculatePrice() throws InvalidPassenger{
-		t.calculatePrice(-80000, false, false);
-		t.calculatePrice(-65535, false, false);
-		t.calculatePrice(-65534, false, false);
-		t.calculatePrice(-65536, false, false);
-		t.calculatePrice(-60000, false, false);
-		t.calculatePrice(-1, false, false);
-		t.calculatePrice(0, false, false);
-		t.calculatePrice(1, false, false);
-		t.calculatePrice(22, false, false);
-		t.calculatePrice(23, false, false);
-		t.calculatePrice(24, false, false);
-		t.calculatePrice(65, false, false);
-		t.calculatePrice(64, false, false);
-		t.calculatePrice(66, false, false);
-		t.calculatePrice(60000, false, false);
-		t.calculatePrice(65535, false, false);
-		t.calculatePrice(65534, false, false);
-		t.calculatePrice(65536, false, false);
-		t.calculatePrice(80000, false, false);
-	}
 
 	@Rule
     public ExpectedException exception = ExpectedException.none();
