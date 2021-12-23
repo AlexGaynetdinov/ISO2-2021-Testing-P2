@@ -46,7 +46,7 @@ public class TransportPlan {
 		int ocupiedSeats = 0;
 		double price = -1;
 
-		if (ill_suspected == false) {
+		if (ill_suspected = false) {
 
 			if (IA < 100) { // level 0
 
