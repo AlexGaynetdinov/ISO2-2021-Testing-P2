@@ -1,7 +1,9 @@
 package App;
 
 import static org.junit.Assert.assertEquals;
+import org.junit.rules.ExpectedException;
 
+import org.junit.Rule;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -40,7 +42,7 @@ public class TestTransportPlan {
 	@Test
 	public void testGetPrice() throws InvalidPassenger {
 
-		assertEquals(t.calculatePrice(24, false, false), 8.0, 0);
+		assertEquals(t.calculatePrice(24, false, false), 7.5, 0);
 	}
 	
 	@Test
@@ -65,5 +67,16 @@ public class TestTransportPlan {
 		t.calculatePrice(65536, false, false);
 		t.calculatePrice(80000, false, false);
 	}
+
+	@Rule
+    public ExpectedException exception = ExpectedException.none();
+     
+    @Test
+    public void testUsernameTooShort() {
+        exception.expect(IllegalArgumentException.class);
+        exception.expectMessage("Username is too short");
+         
+        
+    }
 
 }
