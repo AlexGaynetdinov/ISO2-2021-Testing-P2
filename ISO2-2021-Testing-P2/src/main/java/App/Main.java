@@ -1,4 +1,4 @@
-package iso2t.App;
+package App;
 
 public class Main {
 

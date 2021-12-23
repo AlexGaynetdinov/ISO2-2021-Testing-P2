@@ -1,13 +1,11 @@
-package iso2t.App;
+package App;
 
 import static org.junit.Assert.assertEquals;
-import org.junit.rules.ExpectedException;
 
-import org.junit.Rule;
 import org.junit.Before;
 import org.junit.Test;
 
-import iso2t.Exception.InvalidPassenger;
+import Exceptions.InvalidPassenger;
 
 public class TestTransportPlan {
 
@@ -42,20 +40,7 @@ public class TestTransportPlan {
 	@Test
 	public void testGetPrice() throws InvalidPassenger {
 
-		assertEquals(t.calculatePrice(24, false, false), 7.0, 0);
+		assertEquals(t.calculatePrice(24, false, false), 8.0, 0);
 	}
-
-    //Exception testing
-
-    @Rule
-    public ExpectedException exception = ExpectedException.none();
-     
-    @Test
-    public void testUsernameTooShort() throws InvalidPassenger {
-        exception.expect(InvalidPassenger.class);
-        exception.expectMessage("You can't travel.");
-         
-        t.calculatePrice(24, true, false);
-    }
 
 }

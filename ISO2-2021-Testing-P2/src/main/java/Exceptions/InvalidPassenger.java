@@ -1,4 +1,4 @@
-package iso2t.Exception;
+package Exceptions;
 
 public class InvalidPassenger extends Exception {
 	public InvalidPassenger() {

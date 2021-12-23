@@ -1,6 +1,6 @@
-package iso2t.App;
+package App;
 
-import iso2t.Exception.InvalidPassenger;
+import Exceptions.InvalidPassenger;
 
 public class TransportPlan {
 	
@@ -46,7 +46,7 @@ public class TransportPlan {
 		int ocupiedSeats = 0;
 		double price = -1;
 
-		if (ill_suspected == false) {
+		if (ill_suspected = false) {
 
 			if (IA < 100) { // level 0
 
